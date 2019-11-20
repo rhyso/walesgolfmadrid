@@ -21,25 +21,28 @@ class BlogPostTemplate extends React.Component {
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
-        <Helmet
-          htmlAttributes={{ lang: 'en' }}
-          meta={[{ name: 'description', content: siteDescription }]}
-          title={`${post.frontmatter.title} | ${siteTitle}`}
-          link={[{
-            href:"https://cdn.snipcart.com/themes/2.0/base/snipcart.min.css",
-            rel:"stylesheet",
-            type:"text/css" 
-          }]}
-          script={[{ 
-            type: 'text/javascript',
-            id: "snipcart",
-            "data-api-key": "YjdiNWIyOTUtZTIyMy00MWMwLTkwNDUtMzI1M2M2NTgxYjE0",
-            src:"https://cdn.snipcart.com/scripts/2.0/snipcart.js" 
-          },{
-            type: 'text/javascript',
-            src:"https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"
-          }]}/>
-        <h1>{post.frontmatter.title}</h1>
+          <Helmet
+              htmlAttributes={{ lang: 'en' }}
+              meta={[{ name: 'description', content: siteDescription }]}
+              title={`${post.frontmatter.title} | ${siteTitle}`}
+              link={[{
+                  href:"https://cdn.snipcart.com/themes/2.0/base/snipcart.min.css",
+                  rel:"stylesheet",
+                  type:"text/css"
+              }]}
+              script={[{
+                  type: 'text/javascript',
+                  id: "snipcart",
+                  "data-api-key": "YzM2ZTc1NTItOWZiYi00NTI5LTg5NzMtM2MyZWFlMThkZGNiNjM3MDk4NTQ5MDY0NTYzMTMy",
+                  src:"https://cdn.snipcart.com/scripts/2.0/snipcart.js"
+              },{
+                  type: 'text/javascript',
+                  src:"https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"
+              }]}/>
+
+              <br/>
+                <h1 style={{"font-size": "36px"}}>{post.frontmatter.title}</h1>
+              <br/>
         <p
           style={{
             ...scale(-1 / 5),
@@ -49,9 +52,9 @@ class BlogPostTemplate extends React.Component {
           }}
         >
         </p>
-        
+
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
-        
+
         <BuyButton post={post.frontmatter} images={images}>
         </BuyButton>
 
@@ -112,9 +115,9 @@ export const pageQuery = graphql`
           name
           src
         }
-        customFields { 
+        customFields {
           name
-          values 
+          values
         }
       }
     }

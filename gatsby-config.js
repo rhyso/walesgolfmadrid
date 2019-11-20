@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: 'React & Gatsby shop powered by Snipcart',
-    author: "Snipcart's geeks",
-    description: "A snipcart's demo using React and Gatsby.",
+    title: 'Wales Golf Madrid Fan Shop by Bareth Gale',
+    author: "Bareth Gale",
+    description: "A wales fan apparel shop",
     siteUrl: 'https://snipcart-react-gatsby.netlify.com/',
   },
   pathPrefix: '/gatsby-starter-blog',

@@ -22,27 +22,31 @@ class BlogIndex extends React.Component {
           htmlAttributes={{ lang: 'en' }}
           meta={[{ name: 'description', content: siteDescription }]}
           title={siteTitle}/>
-
-        {posts.map(({ node }) => {
+        { console.log(posts) }
+        {posts.reverse().map(({ node }) => {
           const title = get(node, 'frontmatter.title') || node.fields.slug;
           var image = get(node, 'frontmatter.image');
           const imgSrc= require(`./../pages${node.frontmatter.path}${image[0].src}.jpg`);
-          
+
           return (
             <div key={node.fields.slug}>
               <h3
                 style={{
-                  marginBottom: rhythm(1 / 4),
+                  marginBottom: '20px',
+                  textAlign: 'center',
                 }}
-              >
-                <Link style={{ boxShadow: 'none' }} to={node.fields.slug}>
+              > <br/>
+                <Link style={{ boxShadow: '10px solid red',
+                  borderBottom: '1px solid black',
+                  paddingBottom: '10px',
+                  color: 'red',
+                  borderWidth: '1px',}} to={node.fields.slug}>
                   {title}
                 </Link>
               </h3>
-              <small>{node.frontmatter.date}</small>
-              
+
               <div>
-                <img src={imgSrc} width="200px"></img>
+                <img src={imgSrc} width="200px" style={{"text-align": "center", "margin-left": "34%", "margin-top": "15px"}} />
                 <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
               </div>
             </div>

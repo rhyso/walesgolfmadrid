@@ -16,6 +16,7 @@ class Layout extends React.Component {
             ...scale(1.5),
             marginBottom: rhythm(1.5),
             marginTop: 0,
+            textAlign: 'center',
           }}
         >
           <Link
@@ -43,11 +44,13 @@ class Layout extends React.Component {
             style={{
               boxShadow: 'none',
               textDecoration: 'none',
-              color: 'inherit',
+              color: 'red',
+              textAlign: 'center',
+
             }}
             to={'/'}
           >
-            {title}
+             back to  home
           </Link>
         </h3>
       )
@@ -70,7 +73,7 @@ class Layout extends React.Component {
         />
         <div style={{
           textAlign: 'center'
-        }}>Made with <span style={{color: 'red'}}>&#10084;</span> by <a target="_blank" href="https://snipcart.com">Snipcart</a></div>
+        }}>Made in <br/><img src={'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Welsh_Dragon_%28Y_Ddraig_Goch%29.svg/220px-Welsh_Dragon_%28Y_Ddraig_Goch%29.svg.png'} width={"70px"} style={{"margin-left": "0px"}}/> </div>
       </div>
     )
   }
